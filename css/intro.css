@@ -3,3 +3,21 @@
    Covers the loading screen and the "click to continue" screen.
    To be written.
    ========================================================================== */
+#loading {
+   opacity: 1;
+   transition: opacity .6s ease, visibility .6s linear;
+}
+
+#loading.hidden {
+   opacity: 0;
+   visibility: hidden;
+}
+
+#click-to-continue {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+#click-to-continue.visible {
+  opacity: 1;
+}
