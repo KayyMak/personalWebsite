@@ -13,6 +13,12 @@ let timerId = setTimeout(loadingScreen, 3000);
 
 function loadingScreen() {
     loadingDiv.classList.add("hidden");
-    continueDiv.classList.add("visible");
 }
+
+loadingDiv.addEventListener("transitionend", function showDiv(event) {
+    if (event.propertyName === "visibility") {
+        continueDiv.classList.add("visible");
+        loadingDiv.removeEventListener("transitionend", showDiv);
+    }
+});
 
